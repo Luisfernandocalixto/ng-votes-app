@@ -1,0 +1,33 @@
+<form action="" class="ui form">
+    <h3 class="ui header">{{title}}</h3>
+
+    <div class="field">
+        <label for="title">Title:</label>
+        <input type="text" #newtitle name="title" placeholder="Add title">
+    </div>
+
+    <div class="field">
+        <label for="link">Link:</label>
+        <input type="url" #newlink name="link" placeholder="Add link">
+    </div>
+
+    <button class="ui primary button" (click)="addArticle(newtitle, newlink)" type="submit">
+        Add a link
+    </button>
+
+</form>
+
+
+<div class="ui">
+    <article-app
+    *ngFor="let article of sortedArticles(); let i = index;"
+    [article]="article"
+    >
+
+    </article-app>
+</div>
+
+
+
+
+<article></article>
